@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details</title>
+    <script>
+        const books = [
+            {
+                "title": "The Great Gatsby",
+                "author": "F. Scott Fitzgerald",
+                "publicationYear": 1925,
+                "genres": ["Fiction", "Classics"]
+            },
+            {
+                "title": "To Kill a Mockingbird",
+                "author": "Harper Lee",
+                "publicationYear": 1960,
+                "genres": ["Fiction", "Coming-of-Age"]
+            }
+        ];
+
+        function displayBookDetails() {
+            const firstBookTitle = books[0].title;
+            const secondBookAuthor = books[1].author;
+            const allGenres = books.flatMap(book => book.genres).join(", ");
+
+            document.getElementById("first-book-title").textContent = firstBookTitle;
+            document.getElementById("second-book-author").textContent = secondBookAuthor;
+            document.getElementById("all-genres").textContent = allGenres;
+        }
+
+        window.onload = displayBookDetails;
+    </script>
+</head>
+<body>
+    <h1>Book Details</h1>
+    <p><strong>Title of the first book:</strong> <span id="first-book-title"></span></p>
+    <p><strong>Author of the second book:</strong> <span id="second-book-author"></span></p>
+    <p><strong>Genres of all books:</strong> <span id="all-genres"></span></p>
+</body>
+</html>
